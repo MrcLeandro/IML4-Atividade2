@@ -75,3 +75,4 @@ docker run water-potability-app
 ├── mlruns/             # Modelos e métricas versionados
 └── pyproject.toml      # Configuração de dependências do Poetry
 ```
+Sat Jan 10 23:57:48 UTC 2026 trigger CI
