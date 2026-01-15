@@ -1,6 +1,6 @@
 import mlflow
 import mlflow.sklearn
-from sklearn.ensemble import RandomForestClassifier
+from lightgbm import LGBMClassifier
 from src.data.process import prepare_data
 from abc import ABC, abstractmethod
 
@@ -10,10 +10,10 @@ class TrainingStrategy(ABC):
     def execute(self, X_train, y_train):
         pass
 
-class RandomForestStrategy(TrainingStrategy):
+class LightGBMStrategy(TrainingStrategy):
     def __init__(self, n_estimators=100, max_depth=5):
         self.params = {"n_estimators": n_estimators, "max_depth": max_depth}
-        self.model = RandomForestClassifier(**self.params)
+        self.model = LGBMClassifier(**self.params)
 
     def execute(self, X_train, y_train):
         return self.model.fit(X_train, y_train)
@@ -29,7 +29,7 @@ def train():
 
     with mlflow.start_run():
         # Instancia a estratégia (Design Pattern)
-        strategy = RandomForestStrategy(n_estimators=100, max_depth=5)
+        strategy = LightGBMStrategy(n_estimators=100, max_depth=5)
         
         # Executa o treino
         model = strategy.execute(X_train, y_train)
