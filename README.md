@@ -1,3 +1,8 @@
+Atividade realizada pelos alunos:
+- Márcio Leandro
+- Mônica Mendes
+- Rudi Modena
+  
 # Classificação de Potabilidade de Água
 
 Este projeto foi desenvolvido como parte da disciplina IML4 do MBA em Ciência de Dados (UFSCar). O objetivo é construir um pipeline de Machine Learning robusto para classificar se a água é potável ou não, baseado em métricas físico-químicas.
